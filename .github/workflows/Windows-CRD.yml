@@ -20,9 +20,35 @@ jobs:
       run: ./setup.ps1
     - name: Starting CRD
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: Keep Alive 6 hr
+      run: ./timeout.ps1
+    - name: Keep Alive 12
+      run: ./timeout.ps1
+    - name: Keep Alive 18
+      run: ./timeout.ps1
+    - name: Keep Alive24
+      run: ./timeout.ps1
     - name: Keep Alive
       run: ./timeout.ps1
     - name: Keep Alive
-      run: ./timeout.ps1  
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
+    - name: Keep Alive   48
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
+    - name: Keep Alive    72
+      run: ./timeout.ps1
+    - name: Keep Alive More than 72
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
     - name: Keep Alive
       run: ./timeout.ps1
