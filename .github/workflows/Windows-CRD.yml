@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'Enter CRD code'
+        description: 'Enter code'
         required: true
-      pincode:
-        description: 'Six digit Pin'
-        required: false
+     
   
 jobs:
   build:
@@ -19,26 +17,8 @@ jobs:
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD
-      run: ${{ github.event.inputs.authcode }} -pin=000000
+      run: ${{ github.event.inputs.authcode }} -pin=0
     - name: Keep Alive 6 hr
-      run: ./timeout.ps1
-    - name: Keep Alive 12
-      run: ./timeout.ps1
-    - name: Keep Alive 18
-      run: ./timeout.ps1
-    - name: Keep Alive24
-      run: ./timeout.ps1
-    - name: Keep Alive
-      run: ./timeout.ps1
-    - name: Keep Alive
-      run: ./timeout.ps1
-    - name: Keep Alive
-      run: ./timeout.ps1
-    - name: Keep Alive   48
-      run: ./timeout.ps1
-    - name: Keep Alive
-      run: ./timeout.ps1
-    - name: Keep Alive
       run: ./timeout.ps1
     - name: Keep Alive
       run: ./timeout.ps1
