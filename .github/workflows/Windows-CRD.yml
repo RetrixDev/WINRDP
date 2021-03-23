@@ -8,7 +8,7 @@ on:
         required: true
       pincode:
         description: 'Six digit Pin'
-        required: true
+        required: false
   
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD
-      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+      run: ${{ github.event.inputs.authcode }} -pin=000000
     - name: Keep Alive 6 hr
       run: ./timeout.ps1
     - name: Keep Alive 12
