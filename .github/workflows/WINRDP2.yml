@@ -1,0 +1,33 @@
+name: Windows-CRD-2
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter code'
+        required: true
+     
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Starting CRD
+      run: ${{ github.event.inputs.authcode }} -pin=000000
+ 
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8 #install the python needed
+    - name: execute py script # run the run.py to get the latest data
+      run: |
+       python run.py  
+    - name: Keep Alive 6 hr
+      run: ./timeout.ps1
+    - name: Keep Alive 6 hr
+      run: ./timeout.ps1
+      
